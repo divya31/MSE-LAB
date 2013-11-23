@@ -1,0 +1,144 @@
+1)DVM instructions 
+
+Instruction name
+Syntax
+Description
+Example
+
+The five instructions chosen are 
+1)array-length
+2)goto
+3)return
+4)move
+5)if-eq
+
+
+1>ARRAY-LENGTH
+array-length
+array-length vx,vy 
+vx: destination register (4 bits)
+vy: array reference-bearing register (4 bits)
+
+	Calculates the number of elements of the array referenced by vy and puts the length value into vx. 
+
+example
+-------
+	2111 – array-length v1, v1
+Calculates the number of elements of the array referenced by v1 and puts the result into v1.
+
+2>GOTO
+goto
+goto target
+target: signed branch offset (8 bits)
+
+Unconditionally jump to the indicated instruction.
+
+example
+-------
+ 	28F0 - goto 0005 // -0010
+Jumps to current position-16 words (hex 10). 0005 is the label of the target instruction.
+
+3>RETURN
+return
+return vx 		
+Return with vx return value 
+vx: return value register (8 bits)
+
+Return from a single-width (32-bit) non-object value-returning method.
+
+example
+-------
+0F00 – return v0
+ Returns with return value in v0.
+
+4> MOVE
+move
+move vx,vy 
+Moves the content of vy into vx. Both registers must be in the first 256 register range.
+
+example
+-------
+0110 – move v0, v1
+		Moves v1 into v0.
+
+5>IF-EQ
+if-eq
+if-eq vx,vy,target 
+Jumps to target if vx==vy2. vx and vy are integer values. 
+
+example
+-------
+32b3 6600 - if-eq v3, v11, 0080 // +0066
+Jumps to the current position+66H words if v3==v11. 0080 is the label of the target instruction.
+
+
+*****************************************************************
+*****************************************************************
+
+2)Mobile computing vs. cloud computing
+
+Cloud computing
+- Allows you to store your files and folders in a “cloud” area on the Internet, allowing you access to all of your files and folders wherever you are in the world – but you do need a physical device with Internet access to access it. 
+- Synonym for distributed computing over a network,means the ability to run a program or application on many connected computers at the same time
+- Mobile apps may use the cloud for both app development as well as hosting
+
+Mobile computing
+ Mobile computing is taking a physical device with you. This could be a laptop or a mobile phone or some device which enables you to telework – working wherever you go because of the small size of the device you’re using. 
+
+MOBILE CLOUD COMPUTING efforts in the following domains lacking:
+================================================================
+
+1)Total cloud dependency 
+- When using mobile cloud computing, apps may rely on the cloud for everything, especially when you are trying to develop the same app to run on multiple platforms at the same time using a browser interface.
+
+2)Mobile cloud computing needs to overcome mobile device differences 
+– The mobile cloud may need to approximate more or less the same end user experience on all platforms to avoid device specific customizations.
+
+3)Mobile cloud computing needs to allow for disconnected operation 
+– Mobile devices may go out of range while an application is being served from the mobile cloud. It needs to support disconnected operation as much as possible.
+
+4)Mobile cloud computing needs to be communication fault tolerant 
+– Mobile connections can become weaker and may even disconnect while an application is being used. The cloud may need to be capable of monitoring the connection strength and needs to be fault tolerant of these possible communications disconnects.
+
+5)Mobile cloud computing needs to be mindful of limited energy availability on mobiles 
+– The mobile cloud needs to be mindful of the limited energy availability on mobile devices and may need to perform all functions on the side of the cloud, rather than expect them to be done on the mobile device.
+
+DIFFERENCES b/w MOBILE CLOUD COMPUTING AND CLOUD COMPUTING
+==========================================================
+
+1)CLIENTS
+
+for MOBILE CLOUD COMPUTING are cell phones.
+for cloud computing are computers.
+
+2)
+MOBILE CLOUD COMPUTING
+ Applications are run on a remote server and then sent to the user.
+CLOUD COMPUTING
+ Network-based services, which appear to be provided by real server hardware, and are in fact served up by virtual hardware, simulated by software running on one or more real machines. Such virtual servers do not physically exist and can therefore be moved around and scaled up (or down) on the fly without affecting the end user - arguably, rather like a cloud.
+
+3)
+MOBILE CLOUD COMPUTING
+ Consist of software that runs on a mobile device and perform certain tasks for the user of the mobile phone
+CLOUD COMPUTING
+ The main enabling technology for cloud computing is virtualization.
+
+4)
+CLOUD COMPUTING
+ Cloud computing adopts concepts from Service-oriented Architecture (SOA) that can help the user break these problems into services that can be integrated to provide a solution
+
+
+*****************************************************************
+*****************************************************************
+
+3)Application simulating an environment of  context aware computing and justify.
+
+
+The cricket compass for context-aware mobile applications
+
+The ability to determine the orientation of a device is of fundamental importance in context aware and location-dependent mobile computing. By analogy to a traditional compass, knowledge of orientation through the Cricket compass attached to a mobile device enhances various applications, including efficient way-finding and navigation, directional service discovery, and “augmented-reality” displays. 
+
+Using fixed active beacons and carefully placed passive ultrasonic sensors, the project shows how to estimate the orientation of a mobile device to within a few degrees, using precise, sub-centimeter differences in distance estimates from a beacon to each sensor on the compass. Then, given a set of fixed, active position beacons whose locations are known, the project  describe an algorithm that combines several carrier arrival times to produce a robust estimate of the rigid orientation of the mobile compass.
+
+The hardware of the Cricket compass is small enough to be integrated with a handheld mobile device. It includes five passive ultrasonic receivers, each 0.8cm in diameter, arrayed in a “V” shape a few centimeters across. Cricket beacons deployed throughout a building broadcast coupled 418MHz RF packet data and a 40KHz ultrasound carrier, which are processed by the compass software to obtain differential distance and position estimates. the project's experimental results shows that the prototype implementation can determine compass orientation to within 3 degrees when the true angle lies between ±30 degrees, and to within 5 degrees when the true angle lies between ±40 degrees, with respect to a fixed beacon.
+
